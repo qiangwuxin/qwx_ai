@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电商 App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#FF0000',
+secondary: '#FF8080'
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+DEFAULT: '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-gray-50">
+<div class="w-[375px] min-h-[762px] mx-auto relative bg-white">
+<nav class="fixed top-0 w-[375px] h-[56px] bg-primary flex items-center justify-between px-4 z-50">
+<div class="font-['Pacifico'] text-white text-xl">logo</div>
+<div class="flex items-center space-x-3">
+<i class="fas fa-search text-white text-lg"></i>
+<i class="fas fa-bell text-white text-lg"></i>
+</div>
+</nav>
+<div class="pt-[56px] pb-[56px]">
+<div class="w-full h-[160px] relative overflow-hidden">
+<img src="https://ai-public.mastergo.com/ai/img_res/8a3bb41d94cc77c21d89136df2a73bc8.jpg" class="w-full h-full object-cover" alt="Banner">
+</div>
+<div class="grid grid-cols-5 gap-4 px-4 py-6">
+<div class="flex flex-col items-center">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden mb-2">
+<img src="https://ai-public.mastergo.com/ai/img_res/4ac84dbfd58d476dd75d93f5f923cd5b.jpg" class="w-full h-full object-cover" alt="分类">
+</div>
+<span class="text-xs text-gray-600 whitespace-nowrap">服装</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden mb-2">
+<img src="https://ai-public.mastergo.com/ai/img_res/2a4f8ccc2b3c5d253eb1f001041b62d2.jpg" class="w-full h-full object-cover" alt="分类">
+</div>
+<span class="text-xs text-gray-600 whitespace-nowrap">数码</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden mb-2">
+<img src="https://ai-public.mastergo.com/ai/img_res/0df8e5d0f3b8a3f9eb360073f0cabfd3.jpg" class="w-full h-full object-cover" alt="分类">
+</div>
+<span class="text-xs text-gray-600 whitespace-nowrap">美食</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden mb-2">
+<img src="https://ai-public.mastergo.com/ai/img_res/2293b20ece92f69d5faba59ed41b49ec.jpg" class="w-full h-full object-cover" alt="分类">
+</div>
+<span class="text-xs text-gray-600 whitespace-nowrap">美妆</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-[48px] h-[48px] rounded-full overflow-hidden mb-2">
+<img src="https://ai-public.mastergo.com/ai/img_res/d0b96ace8020ef65a301617b601b87e0.jpg" class="w-full h-full object-cover" alt="分类">
+</div>
+<span class="text-xs text-gray-600 whitespace-nowrap">家电</span>
+</div>
+</div>
+<div class="px-4">
+<div class="text-lg font-medium mb-4">热门商品</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://ai-public.mastergo.com/ai/img_res/dad11e901893cde6432d650bbf4ee282.jpg" class="w-full h-[160px] object-cover" alt="商品">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">潮流运动鞋</div>
+<div class="text-primary text-sm">¥ 299</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://ai-public.mastergo.com/ai/img_res/b8e7ec682b5c87274f12afbcf3400004.jpg" class="w-full h-[160px] object-cover" alt="商品">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">无线耳机</div>
+<div class="text-primary text-sm">¥ 499</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://ai-public.mastergo.com/ai/img_res/d0f95d202d07b09702e47e2410654999.jpg" class="w-full h-[160px] object-cover" alt="商品">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">智能手表</div>
+<div class="text-primary text-sm">¥ 899</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<img src="https://ai-public.mastergo.com/ai/img_res/c022af740b55ec8ba7b045a58ad7d87f.jpg" class="w-full h-[160px] object-cover" alt="商品">
+<div class="p-2">
+<div class="text-sm font-medium mb-1">智能手机</div>
+<div class="text-primary text-sm">¥ 3999</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 w-[375px] h-[56px] bg-white border-t border-gray-100 grid grid-cols-5 items-center">
+<div class="flex flex-col items-center">
+<i class="fas fa-home text-primary text-lg"></i>
+<span class="text-xs text-primary mt-1">首页</span>
+</div>
+<div class="flex flex-col items-center">
+<i class="fas fa-play text-gray-400 text-lg"></i>
+<span class="text-xs text-gray-400 mt-1">视频</span>
+</div>
+<div class="flex flex-col items-center">
+<i class="fas fa-comment text-gray-400 text-lg"></i>
+<span class="text-xs text-gray-400 mt-1">消息</span>
+</div>
+<div class="flex flex-col items-center">
+<i class="fas fa-shopping-bag text-gray-400 text-lg"></i>
+<span class="text-xs text-gray-400 mt-1">购物</span>
+</div>
+<div class="flex flex-col items-center">
+<i class="fas fa-user text-gray-400 text-lg"></i>
+<span class="text-xs text-gray-400 mt-1">我的</span>
+</div>
+</div>
+</div>
+</body>
+</html>
