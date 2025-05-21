@@ -44,3 +44,5 @@
 - 结合 Prompt Engineering 自然语义编程
 - AI 自动完成某些任务 （注释，测试，上线...）
 - Copilot 协助编程
+
+- git 版本控制
