@@ -9,7 +9,7 @@ function bar() {
 function foo() {
   var myName = "极客邦"
   let test = 2
-  {
+  { //块级作用域 
     let test = 3
     bar()
   }
