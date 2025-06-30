@@ -5,7 +5,7 @@
   http api 请求
 - LLM 服务
   api 一样
-
+  fetch 赋予了js新生命
 ## WebLLM
 
 智能前端的战场
