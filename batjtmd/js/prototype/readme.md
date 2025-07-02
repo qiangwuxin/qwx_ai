@@ -30,3 +30,23 @@
 new->{}->constructor运行->this->{}->完成了构造
 ->__proto__->constructor.prototype->Object 原型链
 ->null 终点
+
+当使用 new 调用构造函数时，会发生以下步骤：
+function _new(constructor, ...args) {
+  // 1. 创建一个空对象
+  const obj = {};
+  
+  // 2. 将构造函数的this指向这个空对象
+  // 3. 执行构造函数中的代码
+  constructor.apply(obj, args);
+  
+  // 4. 将空对象的隐式原型指向构造函数的原型
+  obj.__proto__ = constructor.prototype;
+  
+  // 5. 返回这个对象
+  return obj;
+}
+
+// 实际使用
+const car = _new(Car, 'blue');
+
