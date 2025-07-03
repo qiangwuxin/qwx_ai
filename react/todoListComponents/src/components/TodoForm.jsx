@@ -13,7 +13,6 @@ function TodoForm(props) {
   }
   const handleChange = (e) => {
     setText(e.target.value);
-
   }
   return (
     <form action="http://www.baidu.com" onSubmit={handleSubmit}>
