@@ -1,20 +1,12 @@
-//node 后端
-//node 内置的核心模块（http模块)
-//js 在命令行运行 就叫做后端
-//js有两种模块化方案
-//1.require node早期模块化 commonJS 
-//2.import es6 更先进的模块化方案 
-//old module 
-//node 受欢迎  适合中小项目开发
-//端口 -> 某个服务
-//3306 mysql 服务 进程（资源） 线程（执行） 
-// Domain(localhost) -> ip地址(127.0.0.1)->某台设备->port(端口) 设备上的某个服务（进程）
-//1234 8080 端口占用了，
-// 一台设备上可以很多端口使用有多个http服务 多个网站
-// 不要使用一些特殊端口
-const http = require('http');
-const fs=require('fs');//file system
-const path=require('path');//path 路径模块
+//es6 模块化 
+//mjs 后缀使用es6模块化
+//模块化是一种语言的能力
+//node 默认不支持es6模块化
+//node 最新版本支持了 22
+//node 准备跟require commonjs say goodbye 
+//es6 module 更先进 mjs
+import http from 'http';
+
 const server=http.createServer((req, res) => {
   // res.end('hello http server');
   //http 基于请求响应的协议 
@@ -57,5 +49,20 @@ const server=http.createServer((req, res) => {
     );
     return ;
   }
+  if(req.method=='GET'&&req.url=='script.js'){
+    fs.readFile(
+      path.join(__dirname,'public','/script.js'),
+      (err,content)=>{
+        if(err){
+          res.writeHead(500);
+          res.end('Server error');
+          return ;
+        }
+        res.writeHead(200,{'Content-Type':'text/javascript'})
+        res.end(content);
+      }
+    );
+    return ;
+  }
 })
-server.listen(8080);
+server.listen(1234);
