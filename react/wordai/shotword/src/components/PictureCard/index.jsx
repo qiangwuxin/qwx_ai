@@ -2,8 +2,14 @@ import React,{
   useState
 } from 'react'
 import './style.css'
-const PictureCard=()=>{
-  const [word,setWord]=useState("");
+const PictureCard=(props)=>{
+  console.log(props,'///');
+  const {
+    uploadImage,
+     word
+}=props;
+  // console.log(uploadImage);
+  // const [word,setWord]=useState("");
   const [imgPreview, setImgPreview] = useState('https://res.bearbobo.com/resource/upload/W44yyxvl/upload-ih56twxirei.png');
   const updateImageData=(e)=>{
   //  html5的文件上传功能
@@ -22,6 +28,9 @@ const PictureCard=()=>{
       // console.log(reader.result);
       //响应式业务
       setImgPreview(reader.result);
+      //如何将图片数据交给父组件
+      uploadImage(reader.result);
+      resolve(reader.result);
     }
   })
   }
