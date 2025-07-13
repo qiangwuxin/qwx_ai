@@ -32,6 +32,7 @@ const PictureCard=(props)=>{
       uploadImage(reader.result);
       resolve(reader.result);
     }
+    reader.onerror=(error)=>{reject(error);};
   })
   }
   return(
