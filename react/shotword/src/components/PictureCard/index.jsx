@@ -33,6 +33,10 @@ const PictureCard = (props) => {
     reader.onerror=(error)=>{reject(error);};
   })
   }
+  const playAudio=()=>{
+    const audioEle=new Audio(audio);
+    audioEle.play();
+  }
   return (
     <div className="card">
      <input 
@@ -45,7 +49,12 @@ const PictureCard = (props) => {
       <img src={imgPreview} alt="preview" />
       </label>
       <div className="word">{word}</div>
-    </div>
+      {audio && (
+        <div className="playAudio" onClick={playAudio}>
+            <img width="20px" src="https://res.bearbobo.com/resource/upload/Omq2HFs8/playA-3iob5qyckpa.png" alt="logo" />
+        </div>
+      )}
+      </div>
   )
 }
 

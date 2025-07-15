@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js DOM2 事件机制</title>
+  <style>
+    #parent{
+      background-color: blue;
+      width: 200px;
+      height: 200px;
+    }
+    #child{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="parent" >
+    <div id="child"></div>
+  </div>
+  <script>
+    //html,css,js 各司其职
+    //行内样式要少用
+    //js事件也不要用DOM0 html js耦合在一起
+    //DOM0 和DOM2混用，不好维护了
+    //addEventListerer 统一用useCapture 能力 
+    document.getElementById('parent')
+       .addEventListener('click',function(event){
+        console.log(event.target,'////');
+        console.log('父元素clicked');
+       },false)
+       document.getElementById('child')
+       .addEventListener('click',function(event){
+        console.log('子元素clicked');
+       },true)
+  </script>
+</body>
+</html>
