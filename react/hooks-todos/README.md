@@ -50,8 +50,66 @@
       - 数据和界面状态的一致性
     - 响应式的
 - vue 和 react 区别
+
   - vue 好入门，api 好用
   - react 倾向于原生 JS 入门难
     - hooks？
   - <input v-model="text"/> vue 双向绑定
     <input value={text} onChange={()=>setText(text);}/> react 坚持不做双向绑定 单项绑定
+
+- 本地存储
+
+  - localStorage html5
+    key:value 存储
+    setItem(key,value)
+    getItem(key)
+    removeItem(key)
+
+  - BOM Browser Object Model
+  - DOM Document Object Model
+
+- 本地存储
+  -localStorage 和 cookie 有什么异同
+  - http 无状态，head cookie 带上
+  - cookie 太大，影响 http 性能 4KB
+  - cookie 前端后端后可以设置
+    过期时间
+    domain 隔离
+  - localStorage 只在浏览器端
+    domain
+    todos
+    5MB
+  - IndexDB 数据库 GB
+
+## 自定义 hooks
+
+    - 自己定义的
+    - use
+    - 某一项功能
+        简单函数的封装
+        响应式的状态
+        effect
+        todos
+
+- 自定义 hooks
+
+  - 现代 react app 的架构一部分
+  - hooks 目录
+    自定义 hooks
+    框架 common 部分
+    业务定制 ahooks
+  - use 开头
+    state,effect 逻辑封装复用
+  - return
+    todos,
+    totoggle,
+    addTodos,
+    deleteTodos
+    函数式编程思想的体现
+  - 组件更好地聚焦于模板渲染
+  - 全面 hooks 函数式编程
+
+- 两个遗憾
+  - ../../路径山路十八弯
+    vite 配置 alias 短路径
+  - toggle、delete 跨越组件层级有点多，useContext
