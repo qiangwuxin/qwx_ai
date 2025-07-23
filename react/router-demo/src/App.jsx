@@ -7,6 +7,10 @@ import {
 import './App.css'
 import Home from './pages/Home'
 import About from './pages/About'
+import UserProfile from './pages/UserProfile';
+import Products from './pages/Products';
+import ProductDetails from './pages/Products/ProductDetails';
+import NewProduct from './pages/Products/NewProduct'
 function App() {
  
 
@@ -15,8 +19,16 @@ function App() {
     {/* 前端路由接管一切，配置 */}
      <Router>
       <Routes>
-        <Route path='/' element={<Home />}/>
+      <Route path='/' element={<Home />}/>
         <Route path='/about' element={<About />}/>
+         {/* 接下去... */}
+         <Route path='/about' element={<About />}/>
+        <Route path='/user/:id'  element={<UserProfile />}/>
+        <Route path='/products'  element={<Products />}>
+        {/* 二级路由 */}
+        <Route path=":productId" element={<ProductDetails />}/>
+        <Route path="new" element={<NewProduct/>}/>
+        </Route>
       </Routes>
      </Router>
     </>
