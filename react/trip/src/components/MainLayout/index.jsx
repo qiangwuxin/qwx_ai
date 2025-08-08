@@ -40,13 +40,18 @@ const MainLayout = () => {
       setActive(index)
   }, [])
   return (
-      <>
+      <div 
+      className="flex flex-col h-screen"
+      style={{paddingButtom:'50px'}}
+      >
+        <div className="flex-1">
           <Outlet />
+        </div>
           {/* tabbar */}
           <Tabbar value={active} onChange={
               (key) => { 
                   setActive(key);
-                  navigate(tabs[key].path);
+                  navigate(tabs[key].path); 
           }
           }>
               {tabs.map((tab, index) => (
@@ -58,7 +63,7 @@ const MainLayout = () => {
                   </Tabbar.Item>
               ))}
           </Tabbar>
-      </>
+      </div>
   )
 }
 
