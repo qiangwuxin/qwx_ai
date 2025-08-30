@@ -127,6 +127,36 @@ Readme.md 很重要 方便面试官
 - chatbot 模块
   - llm 模块 chat 封装
   - 迭代 chat,支持任意模型
+- Search
+  - 防抖
+  - api 接口
+    GoogleSuggest
+  - localStoraage
+- 瀑布流
+  - 小红书等主流 App 的内容浏览用户体验产品
+    两列 、图片高度不一致、落差感
+    滚动给加载更多，图片懒加载
+  - 接口
+    /api/images?page=${n} 支持翻页
+    唯一的 id page+index
+    随机图片，高度随机
+  - images 怎么放到两列中？ MVVM
+    数据驱动界面(2 列) 奇偶
+  - 加载更多 位于盒子底部元素 通过使用 IntersectionObserver
+    观察它是否出现在视窗，性能更好，使用了观察者模式
+    组件卸载时，直接使用 disconnect 释放资源，防止内存泄漏
+  - key id 下拉刷新
+  - 使用 intersectionObserver 再次图片懒加载
+- toast 组件封装
+  - 需要自定义，UI 组件库不满足需求
+  - UI props
+  - 可以使用 JS 把它显示出来 跨层级通信
+    观察者
+  - mitt eventBus 事件总线
+    - 实例化 mitt()
+    - on(自定义事件的名字，callback)
+    - emit(自定义事件的名字,参数)
+      组件通过监听一个自定义事件，实现基于事件的组件通信
 
 ## 项目亮点和难点
 
@@ -135,6 +165,8 @@ Readme.md 很重要 方便面试官
   - 对各家模型比较感兴趣，升级为 kimiChat,doubaoChat....灵活
     性能、能力、性价比
     随意切换大模型
+  - 文生图
+    - 优化 prompt 设计，
 - 原子 css
   - App.css 里面添加了通用样式
   - 各自模块里 module.css 不影响别的组件
@@ -144,12 +176,63 @@ Readme.md 很重要 方便面试官
     一个元素按功能逻辑拆分成多个类，和原子一样
     元素的样式就可以由这些原子类组合而成
     样式复用的更好，以后几乎可以不用写样式
+- 智能生成图片
+
+  - 产品
+    冰球社群的宠物动物员 智能出图
+    社交属性
+  - 商业价值
+    技术服务
+    coze 工作流 智能编排 AI 流程 编程的一种
+  - api 调用
+
+  - 设计工作流
+    - 创建工作流 ani_pic
+      上传宠物照片，生成宠物曲棍球运动员照片
+    - 代码节点
+      参数校验和逻辑功能，返回运行的结果
+    - 图片生成流程
+      - 图片理解插件 背后是计算机视觉
+      - 大模型 特征提取
+        propmpt 提示词
+  - wokeflow_id 7537605279215730738
+  - token pat_FHb1j4HnEvrcHEPfv4x7ySy3wClaDyczD4gSBfypW7aSZ69hMBuKEhgwbkwPxmmA
+  - coze 图片你要先上传到 coze 中
+    uploadUrl+token +new FormData
+    append(file)
+    拿到 file_id
+  - workflowUrl+workfolw_id +token
+    工作流需要的参数
+
+- 用户体验优化
+  - 搜索建议，防抖+useMemo 性能优化
+  - 组件粒度划分
+    React.memo +useCallback
+  - 懒加载
+  - 热门推荐 + 相关商品 （产品）
+  - SPA
+  - 骨架屏 不用让用户等待
+  - 文件上传的 preview 用了 html5 的 FileReader 对象
+- 语言输入发表文章功能
+     - 字节 的tts 
+     - onMouseDown
+     - BOM html5
+     navigator.mediaDevices.getUserMedia({
+      audio:true
+     })
+     用户隐私，要授权 getLocation
 
 ## 项目遇到过什么问题，怎么解决的
 
 - chat messages 遇到 message 覆盖问题
   闭包陷阱问题
   一次事件里面，两次 setMessages()
+- 升级瀑布流？
+  - 骨架屏
+  - 奇偶 images 两列分配可能有时候会像天蚕脚一样，不好看，随机分配，所以可能有一边空着
+    两个响应式数组，判断哪一列高度更少，将新得到的 img 加入那个数组
+  - intersectionObserver 用了两次，重复了，dry 原则 封装？
+    hooks 可以用一个自定义 hooks
 - 自定义 Hooks
 
   - useTitle
@@ -161,6 +244,9 @@ Readme.md 很重要 方便面试官
   - arr.findIndex
   - str.startsWith
   - promise
+    瀑布流随机数据生成
+  - Array.from({length:pageSize},(\_,i)=>({
+    }))
 
 - 项目迭代
   - 功能由潜入深
@@ -169,3 +255,15 @@ Readme.md 很重要 方便面试官
   - 流式输出
   - 上下文 LRU
   - coze 工作流接口调用
+
+## 通用组件开发
+
+- Loading
+  - 居中方案
+    position:fixed+tlrb0+margin auto
+  - React.memo 无状态组件，不重新渲染
+  - animation
+
+
+- AI 功能
+     智能前端（http 请求）+ 工作流+coze api+ai 全新工作链路 + 自动化Agent

@@ -35,76 +35,7 @@ const Trip = () => {
       id:1,
       content:'hello,I am your assistant~~',
       role:'assistant'
-    },
-    {
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },{
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },
-    {
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },
-    {
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },
-    {
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },
-    {
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },
-    {
-      id:2,
-      content:'hello~',
-      role:'user'
-    },
-    {
-      id:1,
-      content:'hello,I am your assistant~~',
-      role:'assistant'
-    },
+    }
   ]);
 
   const handleChat = async() => {
@@ -138,7 +69,7 @@ const Trip = () => {
       setIsSending(false)
   }
   return (
-      <div className="flex flex-col h-all">
+      <div className="flex flex-col h-screen">
           <div className={`flex-1 ${styles.chatArea}`}>
           {
             message.map((msg,index)=>(
