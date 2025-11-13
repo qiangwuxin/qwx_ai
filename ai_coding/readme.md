@@ -28,6 +28,6 @@ Google Stitch + Figma MCP +Cursor/Trea 从设计到代码，AI统统搞定
 
 - Figma 设计界面的工具 
 - MCP 
-    高德地图
+    高德地图 
 - MCP figma   Cursor/Trea 
-    非常支持了设计稿到高质量AI代码的通道
+    非常支持了设计稿到高质量AI代码的通道 下

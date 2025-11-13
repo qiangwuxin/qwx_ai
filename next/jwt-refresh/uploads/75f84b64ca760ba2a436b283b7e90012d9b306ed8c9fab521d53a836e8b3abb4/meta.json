@@ -1,0 +1,14 @@
+{
+  "fileName": "unins000.dat",
+  "fileSize": 26105273,
+  "chunkSize": 5242880,
+  "totalChunks": 5,
+  "uploadedChunks": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "complete": false
+}
