@@ -1,0 +1,13 @@
+function reverseListRecursive(head){
+    //递归中止条件
+    if(!head ||!head.next){
+        return head;
+    }
+    //递归调用 交给下一个
+    //回溯？
+    // 1->2->3->4->5->null
+    const newHead=reverseListRecursive(head.next);
+    head.next.next=head;
+    head.next=null;
+    return newHead;
+}
